@@ -10,25 +10,29 @@ import GameplayKit
 
 class GameScene: SKScene {
 
-    var unitEntity: UnitEntity!
+    var unitList : [UnitEntity] = []
     var unit : SKShapeNode!
     
     override func didMove(to view: SKView) {
-        unitEntity = UnitEntity(
-            targetNode: self,
-            targetScene: self,
-            radius: 5,
-            view: view
-        )
         
-        let node = unitEntity.shapeNode
-        self.unit = node
-        self.addChild(node)
+        for _ in 1...200{
+            
+            let unitEntity = UnitEntity(
+                targetNode: self,
+                targetScene: self,
+                view: view
+            )
+            unitList.append(unitEntity)
+            let node = unitEntity.shapeNode
+            self.unit = node
+            self.addChild(node)
+        }
     }
     
     override func mouseDown(with event: NSEvent) {
-        
-        let mouseInputHandle = unitEntity.component(ofType: MoveComponent.self)
-        mouseInputHandle?.handleMouseDown(event: event)
+        for unit in unitList {
+            let mouseInputHandle = unit.component(ofType: MoveComponent.self)
+            mouseInputHandle?.handleMouseDown(event: event)
+        }
     }
 }
