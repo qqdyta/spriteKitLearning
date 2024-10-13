@@ -15,7 +15,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        for _ in 1...200{
+        for _ in 1...80{
             
             let unitEntity = UnitEntity(
                 targetNode: self,
