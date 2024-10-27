@@ -74,7 +74,7 @@ class BaseTrailComponent: GKComponent {
     }
 }
 
-
+/*
 class MoveComponent: GKComponent {
     
     var node: SKNode
@@ -91,6 +91,32 @@ class MoveComponent: GKComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    func createBezierPath(from startPoint: CGPoint, to endPoint: CGPoint) -> CGPath{
+        
+        let path = CGMutablePath()
+        path.move(to: startPoint)
+        
+        let controlPoint1 = CGPoint(
+            x: startPoint.x + CGFloat.random(in: -10...10),
+            y: startPoint.y + CGFloat.random(in: -10...10)
+        )
+        
+        let controlPoint2 = CGPoint(
+            x: endPoint.x + CGFloat.random(in: -10...10),
+            y: endPoint.y + CGFloat.random(in: -10...10)
+        )
+        
+        path
+            .addCurve(
+                to: endPoint,
+                control1: controlPoint1,
+                control2: controlPoint2
+            )
+        return path
+    }
+    
+    
     func handleMouseDown(event: NSEvent){
         
         // 清除之前所有的动作
@@ -98,6 +124,8 @@ class MoveComponent: GKComponent {
         
         //创建移动的动作
         let targetPosition = event.location(in: self.scene)
+        let startPostion = node.position
+        
         let moveAction = SKAction.move(to: targetPosition, duration: 2)
         
         //当节点移动到目标位置以后恢复随机的移动
@@ -153,7 +181,124 @@ class MoveComponent: GKComponent {
     }
     
 }
+*/
 
+
+class MoveComponent: GKComponent {
+    
+    var node: SKNode
+    var scene: SKScene
+    
+    init(node: SKNode, scene: SKScene){
+        
+        self.node = node
+        self.scene = scene
+        super.init()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func startRandomMovement(){
+        
+        node.removeAllActions()
+        let randomMoveAction = self.createRandomMoveAciton()
+        node.run(randomMoveAction, withKey: "randomMovement")
+    }
+    
+    func createRandomMoveAciton() -> SKAction {
+        
+        let endPoint = getRandomPosition()
+        
+        let startPoint = node.position
+        let bezierPath = createBezierPath(from: startPoint, to: endPoint)
+        
+        let moveAction = SKAction.follow(
+            bezierPath,
+            asOffset: false,
+            orientToPath: false,
+            duration: 2
+        )
+        
+        let moveSequence = SKAction.sequence([
+            moveAction,
+            SKAction.run{[weak self] in
+                self?.startRandomMovement()
+            }
+        ])
+        
+        return moveSequence
+    }
+    
+    func createBezierPath(from startPoint: CGPoint, to endPoint: CGPoint) -> CGPath {
+        
+        let path = CGMutablePath()
+        let range = 50.0
+        path.move(to: startPoint)
+        
+        let controlPoint1 = CGPoint(
+            x: startPoint.x + CGFloat.random(in: -range...range),
+            y: startPoint.y + CGFloat.random(in: -range...range)
+        )
+        
+        let controlPoint2 = CGPoint(
+            x: endPoint.x + CGFloat.random(in: -range...range),
+            y: endPoint.y + CGFloat.random(in: -range...range)
+        )
+        
+        path
+            .addCurve(
+                to: endPoint,
+                control1: controlPoint1,
+                control2: controlPoint2
+            )
+        
+        return path
+    }
+    
+    func getRandomPosition() -> CGPoint {
+        
+        let range: CGFloat = 100
+        let position = node.position
+        
+        let minX = max(position.x - range, 0)
+        let minY = max(position.y - range, 0)
+        let maxX = min(position.x + range, scene.size.height)
+        let maxY = min(position.y + range, scene.size.width)
+        
+        let randomX = CGFloat.random(in: minX...maxX)
+        let randomY = CGFloat.random(in: minY...maxY)
+        
+        return CGPoint(x: randomX, y: randomY)
+    }
+    
+    func handleMouseDown(event: NSEvent){
+        
+        node.removeAllActions()
+        
+        let targetPosition = event.location(in: self.scene)
+        
+        let bezierPath = createBezierPath(
+            from: node.position,
+            to: targetPosition
+        )
+        let moveAction = SKAction.follow(
+            bezierPath,
+            asOffset: false,
+            orientToPath: false,
+            duration: 2
+        )
+        let completionAction = SKAction.run{ [weak self ] in
+            self?.startRandomMovement()
+        }
+        let sequence = SKAction.sequence([
+            moveAction,
+            completionAction
+        ])
+        node.run(sequence)
+    }
+}
 
 class ProximityComponent: GKComponent {
     

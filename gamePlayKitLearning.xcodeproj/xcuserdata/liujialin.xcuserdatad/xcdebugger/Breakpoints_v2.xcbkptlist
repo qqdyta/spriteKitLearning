@@ -3,4 +3,66 @@
    uuid = "3F4FE0CD-D6F8-42FA-9467-FBD65F13C3AB"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gamePlayKitLearning/UnitComponents.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "ProximityComponent"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - 240ad17d4e6605df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gamePlayKitLearning.ProximityComponent.__allocating_init(radius: CoreGraphics.CGFloat) -&gt; gamePlayKitLearning.ProximityComponent"
+                  moduleName = "gamePlayKitLearning.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - b86eced5e29cf892"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gamePlayKitLearning.ProximityComponent.init(radius: CoreGraphics.CGFloat) -&gt; gamePlayKitLearning.ProximityComponent"
+                  moduleName = "gamePlayKitLearning.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "306"
+                  endingLineNumber = "306">
+               </Location>
+               <Location
+                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - b86eced5e29cfb71"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gamePlayKitLearning.ProximityComponent.init(radius: CoreGraphics.CGFloat) -&gt; gamePlayKitLearning.ProximityComponent"
+                  moduleName = "gamePlayKitLearning.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

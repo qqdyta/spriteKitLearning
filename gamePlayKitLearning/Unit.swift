@@ -90,6 +90,14 @@ class UnitEntity: GKEntity {
         
         return count
     }
+    
+    func updateColorBasedOnNearbyUnits(){
+        
+        let radius: CGFloat = 50
+        let nearbyUnitCount = countUnitsInRange(radius: radius)
+        let minCount = 0
+        let maxCount = 10
+    }
 }
 
 
