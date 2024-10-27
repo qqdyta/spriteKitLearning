@@ -14,11 +14,25 @@
             filePath = "gamePlayKitLearning/UnitComponents.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "ProximityComponent"
             landmarkType = "3">
             <Locations>
+               <Location
+                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - e9ded4d2edb9b7fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gamePlayKitLearning.ProximityComponent.unitsInRange() -&gt; Swift.Array&lt;gamePlayKitLearning.UnitEntity&gt;"
+                  moduleName = "gamePlayKitLearning.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325">
+               </Location>
                <Location
                   uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - 240ad17d4e6605df"
                   shouldBeEnabled = "Yes"
@@ -34,7 +48,7 @@
                   endingLineNumber = "0">
                </Location>
                <Location
-                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - b86eced5e29cf892"
+                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - b86eced5e29cfde6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -44,22 +58,8 @@
                   urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "306"
-                  endingLineNumber = "306">
-               </Location>
-               <Location
-                  uuid = "E59EA877-BE7B-49A0-B3FC-2596273D643C - b86eced5e29cfb71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "gamePlayKitLearning.ProximityComponent.init(radius: CoreGraphics.CGFloat) -&gt; gamePlayKitLearning.ProximityComponent"
-                  moduleName = "gamePlayKitLearning.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liujialin/Code/PlayGround/gamePlayKitLearning/gamePlayKitLearning/UnitComponents.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "307"
-                  endingLineNumber = "307">
+                  startingLineNumber = "326"
+                  endingLineNumber = "326">
                </Location>
             </Locations>
          </BreakpointContent>

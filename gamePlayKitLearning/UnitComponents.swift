@@ -258,18 +258,37 @@ class MoveComponent: GKComponent {
     }
     
     func getRandomPosition() -> CGPoint {
-        
-        let range: CGFloat = 100
+        let range: CGFloat = 100.0 // 调整移动范围
         let position = node.position
-        
-        let minX = max(position.x - range, 0)
-        let minY = max(position.y - range, 0)
-        let maxX = min(position.x + range, scene.size.height)
-        let maxY = min(position.y + range, scene.size.width)
-        
+
+        // 计算可能的最小和最大值
+        let minPossibleX = position.x - range
+        let maxPossibleX = position.x + range
+
+        // 确保 minX 不小于 0，maxX 不大于场景宽度
+        var minX = max(minPossibleX, 0)
+        var maxX = min(maxPossibleX, scene.size.width)
+
+        // 检查并修正 minX 和 maxX，如果 minX > maxX，则交换它们
+        if minX > maxX {
+            swap(&minX, &maxX)
+        }
+
+        // 对 Y 轴做同样的处理
+        let minPossibleY = position.y - range
+        let maxPossibleY = position.y + range
+
+        var minY = max(minPossibleY, 0)
+        var maxY = min(maxPossibleY, scene.size.height)
+
+        if minY > maxY {
+            swap(&minY, &maxY)
+        }
+
+        // 现在可以安全地生成随机位置
         let randomX = CGFloat.random(in: minX...maxX)
         let randomY = CGFloat.random(in: minY...maxY)
-        
+
         return CGPoint(x: randomX, y: randomY)
     }
     
